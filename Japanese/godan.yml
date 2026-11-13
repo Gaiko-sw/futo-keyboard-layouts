@@ -1,0 +1,333 @@
+name: Godan
+languages: ja
+numberRowMode: AlwaysDisabled
+bottomRowHeightMode: Fixed
+imeHint: qwerty
+attributes: &globalAttrs
+  width: Grow
+  showPopup: false
+  moreKeyMode: OnlyExplicit
+  useKeySpecShortcut: false
+  style: Normal
+  shiftable: false
+  labelFlags:
+    alignLabelOffCenter: false
+    hasHintLabel: true
+rowHeightMode: FillHeight
+
+
+rows:
+
+  - letters:
+      - type: base
+        spec: "!icon/action_undo|!code/action_undo"
+        attributes: &functional { style: Functional, labelFlags: {} }
+
+      - type: flick
+        primary: "a"
+        left: ""
+        up: ""
+        right: ""
+        down: "1"
+
+      - type: flick
+        primary: "k"
+        left: ""
+        up: "q"
+        right: "g"
+        down: "2"
+
+      - type: flick
+        primary: "h"
+        left: "p"
+        up: "f"
+        right: "b"
+        down: "3"
+
+      - type: base
+        spec: "!icon/delete_key|!code/key_delete"
+        attributes: &repeatable { style: Functional, labelFlags: {}, repeatableEnabled: true }
+        
+    rowHeight: 0.4
+        
+    
+
+
+  - letters:
+      - type: base
+        spec: "!icon/action_left|!code/action_left"
+        attributes: *repeatable
+      
+      - type: flick
+        primary: "i"
+        left: ""
+        up: ""
+        right: ""
+        down: "4"
+
+      - type: flick
+        primary: "s"
+        left: ""
+        up: "j"
+        right: "z"
+        down: "5"
+
+      - type: flick
+        primary: "m"
+        left: "/"
+        up: "l"
+        right: "—"
+        down: "6"
+
+      - type: base
+        spec: "!icon/action_right|!code/action_right"
+        attributes: *repeatable
+        
+    rowHeight: 0.4
+    
+
+  - letters:
+      - type: base
+        spec: "!icon/action_emoji|!code/action_emoji"
+        attributes: *functional
+
+      - type: flick
+        primary: "u"
+        left: ""
+        up: ""
+        right: ""
+        down: "7"
+
+      - type: flick
+        primary: "t"
+        left: ""
+        up: "c"
+        right: "d"
+        down: "8"
+
+      - type: flick
+        primary: "y"
+        left: "("
+        up: "x"
+        right: ")"
+        down: "9"
+
+      - type: base
+        spec: "!icon/space_key_for_number_layout|!code/key_space"
+        attributes: { style: Functional, labelFlags: {}, longPressEnabled: true }
+        
+    rowHeight: 0.4
+    
+
+  - letters:
+      - "、"
+      
+      - type: flick
+        primary: "e"
+        left: ""
+        up: ""
+        right: ""
+        down: "1"
+
+      - type: flick
+        primary: "n"
+        left: ":"
+        up: ""
+        right: "•"
+        down: "0"
+
+      - type: flick
+        primary: "r"
+        left: "。"
+        up: "?"
+        right: "!"
+        down: "、"
+
+      - type: base
+        spec: 。
+        
+    rowHeight: 0.4
+    
+
+  - bottom:
+      - type: base
+        spec: "ABC|_"
+        code: -20
+        attributes: *functional
+
+      - type: flick
+        primary: "o"
+        left: ""
+        up: ""
+        right: ""
+        down: ""
+
+      - type: case
+        normal:
+          type: flick
+          # TODO: Icon
+          primary: "ー"
+          left: "voicedMark|["
+          up: "l"
+          right: "semivoiced|]"
+        shifted:
+          type: base
+          spec: "!icon/action_switch_language|!code/action_switch_language"
+          attributes: { longPressEnabled: true }
+
+      - type: flick
+        primary: "w"
+        left: "「"
+        up: "v"
+        right: "」"
+        down: ""
+
+      - type: enter
+        attributes:
+          width: Grow
+    attributes: *globalAttrs
+    
+
+    
+
+
+
+subKeyboards:
+  # ABC
+  Alphabet1:
+    attributes:
+      labelFlags:
+        followKeyLabelRatio: true
+        autoXScale: true
+    rows:
+      - letters:
+          - type: base
+            spec: "!icon/action_undo|!code/action_undo"
+            attributes: *functional
+
+          - type: flick
+            label: "@ - _ /"
+            primary: "@|1"
+            left: "-"
+            up: "_"
+            right: "/"
+            down: "1|@"
+
+          - type: flick
+            label: "ABC"
+            primary: "A|2"
+            left: "B|b"
+            up: "C|c"
+            down: "2||"
+
+          - type: flick
+            label: "DEF"
+            primary: "D|3"
+            left: "E|e"
+            up: "F|f"
+            down: "3|~"
+
+          - type: base
+            spec: "!icon/delete_key|!code/key_delete"
+            attributes: *repeatable
+        splittable: false
+      - letters:
+          - type: base
+            spec: "!icon/action_left|!code/action_left"
+            attributes: *repeatable
+
+          - type: flick
+            label: "GHI"
+            primary: "G|4"
+            left: "H|h"
+            up: "I|i"
+            down: "4|$"
+
+          - type: flick
+            label: "JKL"
+            primary: "J|5"
+            left: "K|k"
+            up: "L|l"
+            down: "5|%"
+
+          - type: flick
+            label: "MNO"
+            primary: "M|6"
+            left: "N|n"
+            up: "O|o"
+            down: "6|&"
+
+          - type: base
+            spec: "!icon/action_right|!code/action_right"
+            attributes: *repeatable
+        splittable: false
+      - letters:
+          - type: base
+            spec: "!text/keylabel_to_symbol|!code/key_switch_alpha_symbol"
+            attributes: *functional
+
+          - type: flick
+            label: "PQRS"
+            primary: "P|7"
+            left: "Q|q"
+            up: "R|r"
+            right: "S|s"
+            down: "7|<"
+
+          - type: flick
+            label: "TUV"
+            primary: "T|8"
+            left: "U|u"
+            up: "V|v"
+            down: "8|^"
+
+          - type: flick
+            label: "WXYZ"
+            primary: "W|9"
+            left: "X|x"
+            up: "Y|y"
+            right: "Z|z"
+            down: "9|>"
+
+          - type: base
+            spec: "!icon/space_key_for_number_layout|!code/key_space"
+            attributes: { style: Functional, labelFlags: { }, longPressEnabled: true }
+        splittable: false
+      - bottom:
+          - type: base
+            spec: "a|_"
+            code: -19
+            attributes: *functional
+
+          - "a = A|*"
+
+          - type: flick
+            label: "'\":;"
+            primary: "'|0"
+            left: "\"|\""
+            up: ":|:"
+            right: ";|;"
+            down: "0|#"
+
+          - type: flick
+            label: ".,?!"
+            primary: ".|."
+            left: ",|,"
+            up: "?|?"
+            right: "!|!"
+
+          - type: enter
+            attributes:
+              width: Grow
+        attributes:
+          width: Grow
+          showPopup: false
+          moreKeyMode: OnlyExplicit
+          useKeySpecShortcut: false
+          style: Normal
+          shiftable: false
+          labelFlags:
+            followKeyLabelRatio: true
+        splittable: false
+        
+        rowHeight: 0.2
